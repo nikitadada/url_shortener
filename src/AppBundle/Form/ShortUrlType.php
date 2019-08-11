@@ -18,7 +18,7 @@ class ShortUrlType extends AbstractType
         ])->add('expiresAt', DateType::class, [
             'widget' => 'single_text',
             'required' => false,
-            'label' => 'Срок жизни',
+            'label' => 'Срок жизни (необязательно)',
         ]);
     }
 
