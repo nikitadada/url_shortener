@@ -1,0 +1,5 @@
+AppBundle\Document\ShortUrl:
+    properties:
+        originalUrl:
+            - Url:
+                message: The url {{ value }} is not a valid url.

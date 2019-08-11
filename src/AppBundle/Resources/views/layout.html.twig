@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}url shorter{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" media="screen"/>
+        <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" media="screen"/>
+    {% endblock %}
+</head>
+
+<body>
+<div class="d-flex" id="wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">{% block caption %}{% endblock %}</div>
+        <div class="list-group list-group-flush">
+            <a href="{{ path('index') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        </div>
+    </div>
+
+    <div id="page-content-wrapper">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+</body>
+{% block javascripts %}
+
+{% endblock %}
+</html>

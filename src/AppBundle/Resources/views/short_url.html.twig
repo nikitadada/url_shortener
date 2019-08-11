@@ -1,0 +1,26 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}create short url{% endblock %}
+{% block caption %}Url shorter{% endblock %}
+
+{% form_theme form '@App/form_theme.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid h-75">
+        <div class="row justify-content-center align-items-center h-75">
+            <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                {% set flashbag = app.session.flashbag.all() %}
+                {% if flashbag|length %}
+                    {% for type, flashes in flashbag %}
+                        {% for message in flashes %}
+                            <div class="alert alert-{{ type }}">
+                                {{ message|raw }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

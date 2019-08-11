@@ -1,0 +1,33 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}statistic{% endblock %}
+{% block caption %}Url statistic{% endblock %}
+
+{% block content %}
+    <div class="container-fluid h-75">
+        <div class="row justify-content-center align-items-center h-75">
+            <div class="col-xl-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Geo information</th>
+                        <th scope="col">User-Agent</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in statistic %}
+                        <tr>
+                            <th scope="row">{{ loop.index }}</th>
+                            <td>{{ item.createdAt.format('Y-m-d H:i:s') }}</td>
+                            <td>{{ item.geoInformation }}</td>
+                            <td>{{ item.userAgent }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

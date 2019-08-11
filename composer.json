@@ -21,6 +21,7 @@
     },
     "require": {
         "php": ">=5.5.9",
+        "alcaeus/mongo-php-adapter": "^1.1",
         "doctrine/mongodb-odm": "1.2.x-dev",
         "doctrine/mongodb-odm-bundle": "^3.2",
         "incenteev/composer-parameter-handler": "^2.0",

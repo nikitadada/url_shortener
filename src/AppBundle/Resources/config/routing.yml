@@ -1,0 +1,15 @@
+index:
+    methods: ['GET', 'POST']
+    path: /
+    defaults:
+        _controller: AppBundle:ShortUrl:index
+
+redirect:
+    path: /{alias}
+    defaults:
+        _controller: AppBundle:ShortUrl:redirect
+
+statistic:
+    path: /statistic/{urlId}
+    defaults:
+        _controller: AppBundle:Statistic:index

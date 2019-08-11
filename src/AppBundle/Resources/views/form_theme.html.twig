@@ -1,0 +1,36 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form %}
+    {{ form_start(form) }}
+    {% for name, child in form %}
+        {% if name != 'submit' %}
+            <div class="form-group">
+                {% if name == 'expiresAt' %}
+                    {{- form_label(child, label, {'label_attr': {'class': 'form-check-label'}} ) -}}
+                {% endif %}
+                {{- form_widget(child, { 'attr': {'class': 'form-control form-control-lg', 'placeholder': 'Длинная ссылка'} }) -}}
+                {{- form_errors(child) -}}
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <div class="form-group">
+        <div class="form-group">
+            <button type="submit" class="btn btn-info btn-lg btn-block">Уменьшить</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block form_errors %}
+    {% if errors|length > 0 %}
+        {% for error in errors %}
+            <div style="margin-top: 5px">
+                <div class="alert alert-danger" role="alert">
+                    {{ error.message }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock form_errors %}
+
